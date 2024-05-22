@@ -5,7 +5,7 @@ import { url } from "./constant";
 import Swal from "sweetalert2";
 
 
-const CreateUserModal = ({ isOpen, onClose, modalData, refreshData }) => {
+const CreateUserModal = ({ isOpen, onClose, modalData, refreshData, setRefreshData }) => {
 
     // state variables
     const [isLoading, setIsLoading] = React.useState(false);
@@ -52,6 +52,7 @@ const CreateUserModal = ({ isOpen, onClose, modalData, refreshData }) => {
         });
 
         setIsLoading(false);
+        setRefreshData(!refreshData);
         onClose();
     }
 

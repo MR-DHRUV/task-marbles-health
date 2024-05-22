@@ -24,6 +24,7 @@ export default function Home() {
     const { isOpen: isCreateOpen, onOpen: onCreateOpen, onClose: onCreateClose } = useDisclosure();
     const { isOpen: isEditOpen, onOpen: onEditOpen, onClose: onEditClose } = useDisclosure();
     const [modalData, setModalData] = React.useState({ name: "", email: "", contact: "", dob: "", description: "" });
+    const [refreshData, setRefreshData] = React.useState(false);
 
     // setup for sorting and pagination
     const [search, setSearch] = React.useState("");
@@ -35,7 +36,7 @@ export default function Home() {
         direction: "ascending",
     });
 
-    const { data, isLoading } = useSWR(`${url}/users/?page=${page}&search=${search}`, fetcher, {
+    const { data, isLoading } = useSWR(`${url}/users/?page=${page}&search=${search}&refresh=${refreshData}`, fetcher, {
         keepPreviousData: true,
     });
 
@@ -59,7 +60,7 @@ export default function Home() {
     return (
         <>
             <CreateUserModal isOpen={isCreateOpen} onClose={onCreateClose} />
-            <UpdateUserModal isOpen={isEditOpen} onClose={onEditClose} modalData={modalData} />
+            <UpdateUserModal isOpen={isEditOpen} onClose={onEditClose} modalData={modalData} refreshData={refreshData} setRefreshData={setRefreshData} />
             <div className="flex h-full flex-col items-center mybg">
                 <Navbar className="w-1/2 mt-5 rounded-2xl nav">
                     <NavbarBrand>
