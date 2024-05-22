@@ -1,7 +1,7 @@
 # User Dashboard
 
 ## Backend
-I have implementes simple CRUD operations for user management.
+I have implemented simple CRUD operations for user management.
 
 I have used Node.js as javascript runtime environment, Express.js as the backend framework and MongoDB as the database.
 
@@ -26,7 +26,7 @@ I have used Node.js as javascript runtime environment, Express.js as the backend
 ## Frontend
 The frontend is built using Next.js(React.js) and Tailwind CSS. I have utilised NextUI for the UI components. 
 
-<strong>The frontend is a simple user dashboard where you can view, add, update and delete users. One can click on the columns to sort the users based on the column, can search for a user.</strong>
+<strong>The frontend is a simple user dashboard where you can view, add, update and delete users. One can click on the columns to sort the users based on the column and can also search for a user.</strong>
 
 #### Local Setup
 1. Clone the repository
