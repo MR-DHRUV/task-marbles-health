@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mybg {
+    background-color: #e7e7e7;
+    height: 100vh !important;
+}
+
+.modal-main {
+    height: 630px !important;
+}
+
+.nav{
+    min-width: 250px !important;
+}
